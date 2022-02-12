@@ -39,7 +39,7 @@ public class DynamicArray {
         this.size+=1;
         System.out.println("New Size: "+ this.size);
         if(size>capacity){
-            resize(capacity*2);
+            resize(capacity*2, size-1);
         }
         arr[size-1]= value;
     }
@@ -48,7 +48,7 @@ public class DynamicArray {
         size+=1;
         System.out.println("New Size: "+size);
         if(size>capacity){
-            resize(capacity*2);
+            resize(capacity*2, size-1);
         }
         for (int i=size-1; i> 0; i--){
             arr[i]= arr[i-1];
@@ -72,7 +72,7 @@ public class DynamicArray {
 
         size+=1;
         if(size>capacity){
-            resize(capacity*2);
+            resize(capacity*2, size-1);
         }
         for (int i=size-1; i> index; i--){
             arr[i]= arr[i-1];
@@ -89,7 +89,7 @@ public class DynamicArray {
         size-=1;
         System.out.println("New Size: "+ this.size);
         if(size==capacity/4){
-            resize(capacity/4);
+            resize(capacity/2, size+1);
         }
         return value;
     }
@@ -134,12 +134,12 @@ public class DynamicArray {
     }
 
 
-    private void resize(int capacity){
+    private void resize(int capacity, int size){
         this.capacity= capacity;
         System.out.println("New capacity: "+this.capacity);
         int [] tempArr= new int[capacity];
 
-        for(int i= 0; i<size; i++){
+        for(int i= 0; i<size-1; i++){
             tempArr[i]= arr[i];
         }
 

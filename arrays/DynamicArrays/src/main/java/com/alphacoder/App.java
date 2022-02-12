@@ -48,7 +48,35 @@ public class App {
         array.push(4);
         array.push(4);
         array.push(7);
-        array.remove(4);
+        array.push(3);
+        array.push(5);
+        array.push(5);
+        array.push(4);
+        array.push(4);
+        array.push(7);
+        array.push(3);
+        array.push(5);
+        array.push(5);
+        array.push(4);
+        array.push(4);
+        array.push(7);
+        //array.remove(4);
         array.print();
+        System.out.println(array.capacity());
+        System.out.println(array.size());
+        array.pop();
+        array.pop();
+        array.pop();
+        array.pop();
+        array.pop();
+        array.pop();
+        array.pop();
+        array.pop();
+        array.pop();
+        System.out.println(array.capacity());
+        System.out.println(array.size());
+        array.pop();
+        array.print();
+
     }
 }
