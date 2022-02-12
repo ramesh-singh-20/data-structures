@@ -1,7 +1,10 @@
 package com.alphacoder;
 
 
+import javax.naming.OperationNotSupportedException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DynamicArray {
     private int capacity;
@@ -109,10 +112,24 @@ public class DynamicArray {
     }
 
     public void remove(int value){
+        List<Integer> indexes= new ArrayList<>();
+        for(int i=0; i< size; i++){
+            if(arr[i]== value){
+                indexes.add(i);
+            }
+        }
+        for(int i=0; i< indexes.size(); i++){
+            delete(indexes.get(i)-i);
+        }
 
     }
 
     public int find(int value){
+        for(int i=0; i< size; i++){
+            if(arr[i]== value){
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -129,10 +146,11 @@ public class DynamicArray {
         this.arr= tempArr;
     }
 
-    @Override
-    public String toString() {
-        return "DynamicArray{" +
-                "arr=" + Arrays.toString(arr) +
-                '}';
+    public void print() {
+        System.out.print("[");
+        for(int i=0; i<size; i++){
+            System.out.print(" "+arr[i]);
+        }
+        System.out.print("]");
     }
 }
