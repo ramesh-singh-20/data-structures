@@ -42,7 +42,7 @@ public class DynamicArray {
     }
 
     public void prepend(int value){
-        size=+1;
+        size+=1;
         System.out.println("New Size: "+size);
         if(size>capacity){
             resize(capacity*2);
@@ -60,10 +60,14 @@ public class DynamicArray {
         }
         if(index==0){
             prepend(value);
+            return;
         }
         if(index==size){
             push(value);
+            return;
         }
+
+        size+=1;
         if(size>capacity){
             resize(capacity*2);
         }
@@ -87,8 +91,21 @@ public class DynamicArray {
         return value;
     }
 
-    public void delete(int index){
+    public int delete(int index){
+        if(index<0 ||index>= size){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        int value= arr[index];
+        if(index==size-1){
+            pop();
+        }else{
+            for(int i=index; i< size; i++){
+                arr[i]= arr[i+1];
+            }
+            size-=1;
+        }
 
+        return value;
     }
 
     public void remove(int value){
