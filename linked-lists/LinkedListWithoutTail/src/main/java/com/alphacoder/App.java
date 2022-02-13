@@ -82,5 +82,17 @@ public class App {
         System.out.println(list.size());
         System.out.println(list.isEmpty());
 
+        System.out.println("***************Value*****************");
+
+        list.pushFront(9);
+        list.pushFront(5);
+        list.pushFront(6);
+        list.pushFront(3);
+        list.print();
+        //System.out.println(list.valueAt(3));
+        System.out.println(list.valueFromEnd(3));
+        System.out.println(list.size());
+        System.out.println(list.isEmpty());
+
     }
 }

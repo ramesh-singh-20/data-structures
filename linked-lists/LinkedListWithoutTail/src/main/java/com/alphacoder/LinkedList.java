@@ -18,7 +18,7 @@ public class LinkedList {
         }
         Node currentNode= head;
         for(int i=0; i<index; i++){
-            currentNode= head.getNext();
+            currentNode= currentNode.getNext();
         }
 
         return currentNode.getData();
@@ -153,6 +153,16 @@ public class LinkedList {
 
         return value;
     }
+
+    public int valueFromEnd(int index){
+        if(index<0 || index>=size){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        int indexFromStart= size-index-1;
+        return valueAt(indexFromStart);
+    }
+
 
     public void print(){
         Node currentNode= head;
