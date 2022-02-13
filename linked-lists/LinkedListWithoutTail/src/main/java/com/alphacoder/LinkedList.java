@@ -163,6 +163,24 @@ public class LinkedList {
         return valueAt(indexFromStart);
     }
 
+    public void reverse(){
+        if(head==null){
+            return;
+        }
+        Node previousNode= null;
+        Node currentNode= head;
+        Node nextNode= currentNode.getNext();
+
+        while(nextNode!= null){
+            currentNode.setNext(previousNode);
+            previousNode= currentNode;
+            currentNode= nextNode;
+            nextNode= currentNode.getNext();
+        }
+        head= currentNode;
+        currentNode.setNext(previousNode);
+    }
+
 
     public void print(){
         Node currentNode= head;

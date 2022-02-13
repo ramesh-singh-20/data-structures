@@ -94,5 +94,14 @@ public class App {
         System.out.println(list.size());
         System.out.println(list.isEmpty());
 
+        System.out.println("**********Reversing*****************");
+        list.print();
+        //list.popFront();
+        //list.popFront();
+        //list.popFront();
+        //list.popFront();
+        list.reverse();
+        list.print();
+
     }
 }
