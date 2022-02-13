@@ -85,6 +85,75 @@ public class LinkedList {
         return value;
     }
 
+    public int front(){
+        if(head== null){
+            throw new ArrayIndexOutOfBoundsException("List is empty.");
+        }
+
+        return head.getData();
+    }
+
+    public int back(){
+        if(head== null){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        Node currentNode= head;
+        while(currentNode.getNext()!= null){
+            currentNode= currentNode.getNext();
+        }
+
+        return currentNode.getData();
+    }
+
+    public void insert(int index, int value){
+        if(index<0 || index>size){
+            throw new ArrayIndexOutOfBoundsException("Index out of bounds.");
+        }
+        size++;
+        Node node= new Node(value);
+        if(head== null){
+            head= node;
+            return;
+        }
+        if(index==0){
+            pushFront(value);
+            return;
+        }
+        Node currentNode= head;
+        Node previousNode= null;
+        for(int i=0; i<index; i++){
+            previousNode= currentNode;
+            currentNode=currentNode.getNext();
+        }
+        previousNode.setNext(node);
+        node.setNext(currentNode);
+
+    }
+    public int erase(int index){
+        if(index<0 || index>=size){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        size--;
+        if(index==0){
+            return popFront();
+        }
+        Node currentNode= head;
+        Node previousNode= null;
+
+        for(int i=0; i<index; i++){
+            previousNode= currentNode;
+            currentNode= currentNode.getNext();
+        }
+
+        int value= currentNode.getData();
+        previousNode.setNext(currentNode.getNext());
+        currentNode= null;
+
+        return value;
+    }
+
     public void print(){
         Node currentNode= head;
 
@@ -94,4 +163,5 @@ public class LinkedList {
         }
         System.out.println();
     }
+
 }

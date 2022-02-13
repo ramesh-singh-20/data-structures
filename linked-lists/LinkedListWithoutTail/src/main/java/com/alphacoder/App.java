@@ -42,5 +42,45 @@ public class App {
         System.out.println(list.size());
         //System.out.println(list.valueAt(0));
 
+        System.out.println("***************Front******************");
+        list.pushBack(8);
+        list.pushBack(0);
+        list.pushFront(5);
+        System.out.println(list.front());
+        System.out.println(list.isEmpty());
+        System.out.println(list.size());
+
+        System.out.println("***************Back******************");
+        list.print();
+        System.out.println(list.back());
+        list.popFront();
+        list.print();
+        System.out.println(list.back());
+        list.popFront();
+        list.print();
+        System.out.println(list.back());
+        list.popFront();
+        list.print();
+        System.out.println(list.isEmpty());
+        System.out.println(list.size());
+        //System.out.println(list.back());
+
+        System.out.println("***************Insert*****************");
+        list.insert(0, 0);
+        list.insert(0, 1);
+        list.insert(0, 2);
+        list.insert(1, 2);
+        list.print();
+
+        System.out.println("***************Erase*****************");
+        System.out.println(list.erase(0));
+        System.out.println(list.erase(1));
+        System.out.println(list.erase(1));
+        System.out.println(list.erase(0));
+        //System.out.println(list.erase(0));
+        list.print();
+        System.out.println(list.size());
+        System.out.println(list.isEmpty());
+
     }
 }
