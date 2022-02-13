@@ -103,5 +103,16 @@ public class App {
         list.reverse();
         list.print();
 
+        System.out.println("**********Remove Value*****************");
+        list.removeValue(9);
+        list.print();
+        list.removeValue(6);
+        list.print();
+        list.removeValue(3);
+        list.print();
+        list.removeValue(5);
+        list.print();
+        System.out.println(list.isEmpty());
+        list.removeValue(5);
     }
 }

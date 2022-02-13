@@ -181,6 +181,22 @@ public class LinkedList {
         currentNode.setNext(previousNode);
     }
 
+    public void removeValue(int value){
+        Node current= head;
+        Node previous= null;
+        while(current!= null){
+            if(current.getData()== value){
+                if(current==head){
+                    head= current.getNext();
+                }else{
+                    previous.setNext(current.getNext());
+                }
+            }
+            previous= current;
+            current= current.getNext();
+        }
+    }
+
 
     public void print(){
         Node currentNode= head;
