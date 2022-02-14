@@ -50,6 +50,56 @@ public class App {
         System.out.println("Size: "+ list.size());
 
 
+        System.out.println("*****Front Back********");
+        list.print();
+        list.pushBack(5);
+        list.pushBack(  9);
+        list.pushFront(4);
+        list.pushFront(6);
+        list.pushFront(8);
+        list.pushFront(2);
+        System.out.println("Front: "+list.front());
+        System.out.println("Back: "+ list.back());
+        list.print();
 
+        System.out.println("*****Insert********");
+        list.insert(0, 0);
+        list.insert(7, 7);
+        list.insert(4, 89);
+        list.print();
+        System.out.println("is empty: "+list.isEmpty());
+        System.out.println("Size: "+ list.size());
+        list.popBack();
+        list.popBack();
+        list.popBack();
+        list.popBack();
+        list.popBack();
+        list.popBack();
+        list.popBack();
+        list.popBack();
+
+        list.insert(0, 7);
+        list.print();
+        list.popBack();
+        list.popBack();
+        list.insert(0, 7);
+        list.print();
+        System.out.println("is empty: "+list.isEmpty());
+        System.out.println("Size: "+ list.size());
+
+        System.out.println("*****Remove********");
+        System.out.println(list.remove(0));
+        list.insert(0, 0);
+        list.insert(1, 1);
+        list.insert(2, 2);
+        list.insert(3, 3);
+        System.out.println(list.remove(1));
+        System.out.println(list.remove(2));
+        System.out.println(list.remove(0));
+        System.out.println(list.remove(0));
+        //System.out.println(list.remove(0));
+        list.print();
+        System.out.println("is empty: "+list.isEmpty());
+        System.out.println("Size: "+ list.size());
     }
 }

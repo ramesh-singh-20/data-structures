@@ -69,6 +69,10 @@ public class LinkedList {
         }
     }
 
+    /*
+    Introduction of tail has no effect on time complexity to remove item from the end.
+    It is still O(n) as there is no way to get the item previous to tail.
+     */
     public int popBack(){
         if(head== null){
             throw new ArrayIndexOutOfBoundsException("List is empty.");
@@ -89,6 +93,85 @@ public class LinkedList {
         }
         tail= previous;
         previous.next= null;
+        return value;
+    }
+
+    public int front(){
+        if(head== null){
+            throw new ArrayIndexOutOfBoundsException("List is empty.");
+        }
+
+        return head.data;
+    }
+
+    public int back(){
+        if(head== null){
+            throw new ArrayIndexOutOfBoundsException("List is empty.");
+        }
+
+        return tail.data;
+    }
+
+    public void insert(int index, int value){
+        if(index<0 || index> size){
+            throw new ArrayIndexOutOfBoundsException("Index out of bounds.");
+        }
+
+        size++;
+        Node node= new Node();
+        node.data= value;
+
+        if(index==0){
+            node.next= head;
+            head= node;
+            if(tail== null){
+                tail= head;
+            }
+        }else{
+            Node current= head;
+            Node previous= null;
+            for(int i=0; i<index; i++){
+                previous= current;
+                current= current.next;
+            }
+            if(previous== tail){
+                tail= node;
+            }
+            previous.next= node;
+            node.next= current;
+        }
+
+    }
+
+    public int remove(int index){
+        if(index<0 || index>=size){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        int value= head.data;
+        size--;
+        if(index==0){
+            if(head== tail){
+                head=tail= null;
+            }else{
+                head= head.next;
+            }
+        }else{
+            Node current= head;
+            Node previous= null;
+
+            for(int i=0; i<index; i++){
+                previous= current;
+                current= current.next;
+            }
+            if(current==tail){
+                tail= previous;
+            }
+            previous.next= current.next;
+            value= current.data;
+            current.next= null;
+        }
+
+
         return value;
     }
 
