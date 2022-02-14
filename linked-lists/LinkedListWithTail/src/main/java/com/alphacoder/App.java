@@ -30,5 +30,26 @@ public class App {
         System.out.println("Size: "+ list.size());
         //System.out.println(list.popFront());
 
+        System.out.println("*****Push Back********");
+        list.pushBack(9);
+        //list.print();
+        list.pushBack(6);
+        list.pushBack(2);
+        list.pushBack(5);
+        list.print();
+        System.out.println("is empty: "+list.isEmpty());
+        System.out.println("Size: "+ list.size());
+
+        System.out.println("*****Pop Back********");
+        System.out.println(list.popBack());
+        System.out.println(list.popBack());
+        System.out.println(list.popBack());
+        System.out.println(list.popBack());
+        list.print();
+        System.out.println("is empty: "+list.isEmpty());
+        System.out.println("Size: "+ list.size());
+
+
+
     }
 }

@@ -53,6 +53,45 @@ public class LinkedList {
         return value;
     }
 
+    /*
+    Introduction of tail has reduced the time complexity
+    of pushing elements to the end to O(1)
+     */
+    public void pushBack(int value){
+        size++;
+        Node node= new Node();
+        node.data= value;
+        if(tail== null){
+            head=tail= node;
+        }else{
+            tail.next= node;
+            tail= node;
+        }
+    }
+
+    public int popBack(){
+        if(head== null){
+            throw new ArrayIndexOutOfBoundsException("List is empty.");
+        }
+        size--;
+
+        int value= tail.data;
+        if(head==tail){
+            head=tail= null;
+            return value;
+        }
+        Node current= head;
+        Node previous= null;
+
+        while(current.next!= null){
+            previous= current;
+            current= current.next;
+        }
+        tail= previous;
+        previous.next= null;
+        return value;
+    }
+
     public void print(){
         Node current= head;
 
