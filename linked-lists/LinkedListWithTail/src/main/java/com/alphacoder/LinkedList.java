@@ -37,6 +37,22 @@ public class LinkedList {
         }
     }
 
+    public int popFront(){
+        if(head== null){
+            throw new ArrayIndexOutOfBoundsException("List is empty.");
+        }
+        size--;
+        int value= head.data;
+        if(head==tail){
+            head= null;
+            tail= null;
+        }else{
+            head= head.next;
+        }
+
+        return value;
+    }
+
     public void print(){
         Node current= head;
 
