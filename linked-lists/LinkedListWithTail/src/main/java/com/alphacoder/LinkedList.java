@@ -143,7 +143,7 @@ public class LinkedList {
 
     }
 
-    public int remove(int index){
+    public int erase(int index){
         if(index<0 || index>=size){
             throw new ArrayIndexOutOfBoundsException();
         }
