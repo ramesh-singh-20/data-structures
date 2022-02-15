@@ -175,6 +175,66 @@ public class LinkedList {
         return value;
     }
 
+    public int valueFromEnd(int node){
+        if(node>size || node<1){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        Node fast= head;
+        Node slow= head;
+
+        for(int i=0; i<node; i++){
+            fast= fast.next;
+        }
+
+        while(fast!= null){
+            fast= fast.next;
+            slow= slow.next;
+        }
+
+        return slow.data;
+    }
+
+    public void removeValue(int value){
+        Node current= head;
+        Node previous= null;
+        while(current!= null){
+            if(current.data== value){
+                if(current== head){
+                    head= current.next;
+                }
+                if(current== tail){
+                    tail= previous;
+                }
+                if(previous!= null) {
+                    previous.next = current.next;
+                }
+                current= null;
+                break;
+            }
+            previous= current;
+            current= current.next;
+        }
+    }
+
+    public void reverse(){
+        if(head== null){
+            return;
+        }
+        Node current= head;
+        Node previous= null;
+        Node next= current.next;
+
+        while(next!= null){
+            current.next= previous;
+            previous= current;
+            current= next;
+            next= next.next;
+        }
+        current.next= previous;
+        tail= head;
+        head= current;
+    }
+
     public void print(){
         Node current= head;
 

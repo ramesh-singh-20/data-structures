@@ -101,5 +101,40 @@ public class App {
         list.print();
         System.out.println("is empty: "+list.isEmpty());
         System.out.println("Size: "+ list.size());
+
+        System.out.println("*****value from end********");
+        list.pushBack(1);
+        list.pushBack(2);
+        list.pushBack(3);
+        list.pushBack(4);
+        list.pushBack(5);
+        list.pushBack(3);
+        list.print();
+        System.out.println(list.valueFromEnd(5));
+
+        System.out.println("*****value from end********");
+        list.print();
+        list.removeValue(7);
+        list.print();
+        list.removeValue(1);
+        list.removeValue(3);
+        list.removeValue(3);
+        list.removeValue(4);
+        list.removeValue(2);
+        list.removeValue(5);
+        list.removeValue(0);
+        list.print();
+
+        System.out.println("*****reverse********");
+        list.reverse();
+        list.pushFront(1);
+        list.pushFront(2);
+        list.pushFront(3);
+        list.pushFront(4);
+
+        list.print();
+        list.reverse();
+        list.print();
+
     }
 }
