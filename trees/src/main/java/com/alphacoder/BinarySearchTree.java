@@ -10,15 +10,33 @@ public class BinarySearchTree {
     private Node insert(int data,Node root){
         if(root==null){
             Node node= new Node(data);
-            root= node;
+            return node;
         }
 
         if(data<= root.data){
-            root.left= insert(data, root.left);
+            root.left=insert(data, root.left);
         }
         else{
-            root.right= insert(data, root.right);
+            root.right=insert(data, root.right);
         }
         return root;
+    }
+
+    public boolean search(int data){
+        return search(data, root);
+    }
+
+    private boolean search(int data, Node root){
+        if(root== null){
+            return false;
+        }
+        if(root.data== data){
+            return true;
+        }
+        if(data< root.data){
+            return search(data, root.left);
+        }else{
+            return search(data, root.right);
+        }
     }
 }
