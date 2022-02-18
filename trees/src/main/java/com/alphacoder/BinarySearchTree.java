@@ -3,18 +3,22 @@ package com.alphacoder;
 public class BinarySearchTree {
     public Node root;
 
-    public void insert(int data,Node root){
-        if(this.root==null){
-            Node node= new Node(15);
-            this.root= node;
+    public void insert(int data){
+        root= insert(data, this.root);
+    }
+
+    private Node insert(int data,Node root){
+        if(root==null){
+            Node node= new Node(data);
+            root= node;
         }
 
         if(data<= root.data){
-            insert(data, root.left);
+            root.left= insert(data, root.left);
         }
         else{
-            insert(data, root.right);
+            root.right= insert(data, root.right);
         }
-
+        return root;
     }
 }
