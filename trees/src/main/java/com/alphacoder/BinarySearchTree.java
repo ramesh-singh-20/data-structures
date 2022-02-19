@@ -138,6 +138,50 @@ public class BinarySearchTree {
         }
     }
 
+    public void preOrderDepthFirst(){
+        preOrderDepthFirst(root);
+        System.out.println();
+    }
+
+    public void postOrderDepthFirst(){
+        postOrderDepthFirst(root);
+        System.out.println();
+    }
+
+    public void inOrderDepthFirst(){
+        inOrderDepthFirst(root);
+        System.out.println();
+    }
+
+    private void preOrderDepthFirst(Node root){
+        if(root== null){
+            return;
+        }
+
+        System.out.print(root.data+ " ");
+        preOrderDepthFirst(root.left);
+        preOrderDepthFirst(root.right);
+    }
+
+    private void inOrderDepthFirst(Node root){
+        if(root== null){
+            return;
+        }
+
+        inOrderDepthFirst(root.left);
+        System.out.print(root.data+ " ");
+        inOrderDepthFirst(root.right);
+    }
+
+    private void postOrderDepthFirst(Node root){
+        if(root== null){
+            return;
+        }
+        postOrderDepthFirst(root.left);
+        postOrderDepthFirst(root.right);
+        System.out.print(root.data+ " ");
+    }
+
 
 
 }

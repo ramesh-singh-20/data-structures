@@ -10,13 +10,16 @@ public class App {
         tree.insert(1);
         tree.insert(54);
 
-        System.out.println(tree.search(4));
-        System.out.println(tree.search(11));
+        //System.out.println(tree.search(4));
+        //System.out.println(tree.search(11));
 
-        tree.min();
-        tree.max();
-        tree.height();
+        //tree.min();
+        //tree.max();
+        //tree.height();
         tree.breadthFirst();
+        tree.preOrderDepthFirst();
+        tree.inOrderDepthFirst();
+        tree.postOrderDepthFirst();
 
     }
 }
