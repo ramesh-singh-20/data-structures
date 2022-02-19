@@ -1,5 +1,8 @@
 package com.alphacoder;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     public Node root;
 
@@ -110,6 +113,29 @@ public class BinarySearchTree {
         int right= height(root.right);
 
         return Math.max(left, right)+1;
+    }
+
+    public void breadthFirst(){
+        breadthFirst(root);
+        System.out.println();
+    }
+
+    private void breadthFirst(Node root){
+        Queue<Node> queue= new LinkedList<>();;
+        if(root!= null){
+            queue.add(root);
+        }
+
+        while(!queue.isEmpty()){
+            Node current= queue.poll();
+            System.out.print(current.data+ " ");
+            if(current.left!= null){
+                queue.add(current.left);
+            }
+            if(current.right!= null){
+                queue.add(current.right);
+            }
+        }
     }
 
 

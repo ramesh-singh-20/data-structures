@@ -16,5 +16,7 @@ public class App {
         tree.min();
         tree.max();
         tree.height();
+        tree.breadthFirst();
+
     }
 }
