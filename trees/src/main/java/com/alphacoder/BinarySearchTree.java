@@ -39,4 +39,36 @@ public class BinarySearchTree {
             return search(data, root.right);
         }
     }
+
+    public void min(){
+        System.out.println(minIterative(root));
+        System.out.println(minRecursive(root));
+    }
+
+    private int minIterative(Node head){
+        if(head== null){
+            throw new RuntimeException("Tree is empty.");
+        }
+        Node current= head;
+        while(current.left!= null){
+            current= current.left;
+        }
+        return current.data;
+    }
+
+    private int minRecursive(Node head){
+        if(head== null){
+            throw new RuntimeException("Tree is empty");
+        }
+        if(head.left==null){
+            return head.data;
+        }
+        return minRecursive(head.left);
+
+    }
+
+    private int maxIterative()
+
+
+
 }

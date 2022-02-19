@@ -10,5 +10,7 @@ public class App {
 
         System.out.println(tree.search(4));
         System.out.println(tree.search(11));
+
+        tree.min();
     }
 }
