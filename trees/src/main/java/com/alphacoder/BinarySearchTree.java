@@ -45,6 +45,11 @@ public class BinarySearchTree {
         System.out.println(minRecursive(root));
     }
 
+    public void max(){
+        System.out.println(maxIterative(root));
+        System.out.println(maxRecursive(root));
+    }
+
     private int minIterative(Node head){
         if(head== null){
             throw new RuntimeException("Tree is empty.");
@@ -67,7 +72,30 @@ public class BinarySearchTree {
 
     }
 
-    private int maxIterative()
+    private int maxIterative(Node root){
+        if(root== null){
+            throw new RuntimeException("Tree is empty.");
+        }
+
+        Node current= root;
+        while(current.right!= null){
+            current= current.right;
+        }
+
+        return current.data;
+    }
+
+    private int maxRecursive(Node root){
+        if(root== null){
+            throw new RuntimeException("Tree is empty.");
+        }
+
+        if(root.right== null){
+            return root.data;
+        }
+
+        return maxRecursive(root.right);
+    }
 
 
 
