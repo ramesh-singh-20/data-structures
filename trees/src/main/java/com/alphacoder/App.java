@@ -20,6 +20,7 @@ public class App {
         tree.preOrderDepthFirst();
         tree.inOrderDepthFirst();
         tree.postOrderDepthFirst();
+        System.out.println(tree.isBST());
 
     }
 }
