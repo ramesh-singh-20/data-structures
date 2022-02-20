@@ -192,7 +192,7 @@ public class BinarySearchTree {
         }
 
         if(root.data>min && root.data < max &&
-            isBST(root.left, min, root.data) &&
+            isBST(root.left, min, root.data+1) &&
             isBST(root.right, root.data, max)){
             return true;
         }
