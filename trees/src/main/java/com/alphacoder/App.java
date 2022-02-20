@@ -22,5 +22,6 @@ public class App {
         tree.postOrderDepthFirst();
         System.out.println(tree.isBST());
 
+
     }
 }

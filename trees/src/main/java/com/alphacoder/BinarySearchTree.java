@@ -183,10 +183,10 @@ public class BinarySearchTree {
     }
 
     public boolean isBST(){
-        return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return isBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    private boolean isBST(Node root, int min , int max){
+    private boolean isBST(Node root, long min , long max){
         if(root== null){
             return true;
         }
