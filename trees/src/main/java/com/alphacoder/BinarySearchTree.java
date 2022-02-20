@@ -199,6 +199,25 @@ public class BinarySearchTree {
         return false;
     }
 
+    public boolean isBSTInOrder(){
+        return isBST(root, Integer.MIN_VALUE);
+    }
+
+
+    private boolean isBST(Node root, int previous){
+        if(root== null){
+            return true;
+        }
+        if(!isBST(root.left, previous)){
+            return false;
+        }
+        if(root.data<= previous){
+            return false;
+        }
+        previous= root.data;
+        return isBST(root.right, previous);
+    }
+
 
 
 }
