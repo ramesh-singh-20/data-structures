@@ -270,6 +270,74 @@ public class BinarySearchTree {
 
     }
 
+    private Node successor(Node root, int data){
+        if(root== null){
+            return null;
+        }
+        Node current= find(root, data);
+
+        if(current!= null){
+            if(current.right!= null){
+                return findMinNode(current.right);
+            }else{
+                Node ancestor= root;
+                Node successor= null;
+                while(current!= ancestor){
+                    if(current.data<ancestor.data){
+                        successor= ancestor;
+                        ancestor= ancestor.left;
+                    }else{
+                        ancestor= ancestor.right;
+                    }
+                }
+                return successor;
+            }
+        }
+
+        return current;
+    }
+
+    public int successor(int data){
+        Node successor= successor(root, data);
+
+        if(successor== null){
+            return -1;
+        }else{
+            return successor.data;
+        }
+    }
+
+    private Node find(Node root, int data){
+        if(root== null){
+            return null;
+        }
+        Node current= root;
+        while(current!= null){
+            if(data<current.data){
+                current= current.left;
+            }
+            else if(data> current.data){
+                current= current.right;
+            }
+            else if(data== current.data){
+                break;
+            }
+        }
+        return current;
+    }
+
+    private Node findMinNode(Node root){
+        if(root== null){
+            return null;
+        }
+        Node current= root;
+
+        while(current.left!= null){
+            current= current.left;
+        }
+        return current;
+    }
+
 
 
 }

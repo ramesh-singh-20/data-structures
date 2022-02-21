@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fed6b7d-a137-4040-ac0d-897e6d2c13ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphacoder/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphacoder/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphacoder/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphacoder/BinarySearchTree.java" afterDir="false" />
     </list>

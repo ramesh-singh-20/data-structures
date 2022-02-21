@@ -1,7 +1,11 @@
 package com.alphacoder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     public static void main(String[] args) {
+
         BinarySearchTree tree= new BinarySearchTree();
         tree.insert(12);
         tree.insert(5);
@@ -30,9 +34,11 @@ public class App {
         System.out.println(tree.isBST());
         System.out.println(tree.isBSTInOrder());
 
-        tree.delete(14);
-        tree.breadthFirst();
-        System.out.println(tree.isBST());
+        //tree.delete(14);
+        //tree.breadthFirst();
+        //System.out.println(tree.isBST());
+
+        System.out.println(tree.successor(20));
 
 
     }
