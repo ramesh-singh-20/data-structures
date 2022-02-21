@@ -245,9 +245,11 @@ public class BinarySearchTree {
             else if(root.right== null){
                 root= root.left;
             }
-            //case3: 2 sub children
-            root.data= min(root.right);
-            root.right= delete(root.right, root.data);
+            else {
+                //case3: 2 sub children
+                root.data = min(root.right);
+                root.right = delete(root.right, root.data);
+            }
         }
 
         return root;
@@ -257,11 +259,11 @@ public class BinarySearchTree {
 
         int min= root.data;
         Node current= root;
-        while(current.right!= null){
-            if(current.right.data<min){
-                min= current.right.data;
+        while(current.left!= null){
+            if(current.left.data<min){
+                min= current.left.data;
             }
-            root= current.right;
+            current= current.left;
         }
 
         return min;

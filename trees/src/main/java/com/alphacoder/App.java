@@ -30,7 +30,9 @@ public class App {
         System.out.println(tree.isBST());
         System.out.println(tree.isBSTInOrder());
 
-
+        tree.delete(14);
+        tree.breadthFirst();
+        System.out.println(tree.isBST());
 
 
     }
