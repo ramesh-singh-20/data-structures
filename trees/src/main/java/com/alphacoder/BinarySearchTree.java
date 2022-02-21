@@ -218,6 +218,56 @@ public class BinarySearchTree {
         return isBST(root.right, previous);
     }
 
+    public void delete(int data){
+        delete(root, data);
+    }
+
+    private Node delete(Node root, int data){
+        if(root== null){
+            return null;
+        }
+
+        if(data< root.data){
+            root.left= delete(root.left, data);
+        }
+        else if(data> root.data){
+            root.right= delete(root.right, data);
+        }
+        else if(data== root.data){
+            //CASE1: 0 sub child
+            if(root.left== null && root.right== null){
+                root= null;
+            }
+            //case2: 1 sub child
+            else if(root.left==null){
+                root= root.right;
+            }
+            else if(root.right== null){
+                root= root.left;
+            }
+            //case3: 2 sub children
+            root.data= min(root.right);
+            root.right= delete(root.right, root.data);
+        }
+
+        return root;
+    }
+
+    private int min(Node root){
+
+        int min= root.data;
+        Node current= root;
+        while(current.right!= null){
+            if(current.right.data<min){
+                min= current.right.data;
+            }
+            root= current.right;
+        }
+
+        return min;
+
+    }
+
 
 
 }

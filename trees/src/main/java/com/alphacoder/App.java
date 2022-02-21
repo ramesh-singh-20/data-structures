@@ -3,25 +3,34 @@ package com.alphacoder;
 public class App {
     public static void main(String[] args) {
         BinarySearchTree tree= new BinarySearchTree();
-        tree.insert(15);
-        //tree.insert(37);
-        //tree.insert(12);
-        //tree.insert(4);
-        //tree.insert(1);
-        //tree.insert(54);
+        tree.insert(12);
+        tree.insert(5);
+        tree.insert(14);
+        tree.insert(3);
+        tree.insert(7);
+        tree.insert(13);
+        tree.insert(17);
+        tree.insert(1);
+        tree.insert(9);
+        tree.insert(20);
+        tree.insert(8);
+        tree.insert(11);
+        tree.insert(18);
 
-        //System.out.println(tree.search(4));
-        //System.out.println(tree.search(11));
+        System.out.println(tree.search(4));
+        System.out.println(tree.search(11));
 
-        //tree.min();
-        //tree.max();
-        //tree.height();
+        tree.min();
+        tree.max();
+        tree.height();
         tree.breadthFirst();
         tree.preOrderDepthFirst();
         tree.inOrderDepthFirst();
         tree.postOrderDepthFirst();
         System.out.println(tree.isBST());
         System.out.println(tree.isBSTInOrder());
+
+
 
 
     }
