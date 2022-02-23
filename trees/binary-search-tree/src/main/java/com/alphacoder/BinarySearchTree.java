@@ -53,4 +53,19 @@ public class BinarySearchTree {
             System.out.print(current.data+" ");
         }
     }
+    private int countNodes(TreeNode root, int count){
+        if(root== null){
+            return count;
+        }
+
+        count++;
+        count=countNodes(root.left,count);
+        count=countNodes(root.right,count);
+
+        return count;
+    }
+
+    public void countNodes(){
+        System.out.println("Count: "+countNodes(root, 0));
+    }
 }
