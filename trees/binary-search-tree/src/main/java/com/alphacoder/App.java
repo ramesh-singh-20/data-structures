@@ -17,5 +17,6 @@ public class App {
         System.out.println(tree.isEmpty());
         tree.bfs();
         tree.inOrderTraversal();
+        tree.search(19);
     }
 }

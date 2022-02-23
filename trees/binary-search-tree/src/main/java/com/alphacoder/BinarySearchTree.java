@@ -83,4 +83,27 @@ public class BinarySearchTree {
         System.out.print(root.data+ " ");
         inOrderTraversal(root.right);
     }
+
+    public void search(int data){
+        System.out.println(search(root, data));
+    }
+
+    private boolean search(TreeNode root, int data){
+        if(root== null){
+            return false;
+        }
+
+        if(data< root.data){
+            return search(root.left, data);
+        }
+        if(data> root.data){
+            return search(root.right, data);
+        }
+        if(data== root.data){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
