@@ -1,7 +1,6 @@
 package com.alphacoder;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
@@ -39,7 +38,6 @@ public class App {
         //System.out.println(tree.isBST());
 
         System.out.println(tree.successor(20));
-
 
     }
 }
