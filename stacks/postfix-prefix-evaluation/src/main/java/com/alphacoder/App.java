@@ -4,8 +4,11 @@ import java.util.Stack;
 
 public class App {
     public static void main(String[] args) {
-        String s= "2 3 * 5 4 * + 9 -";
+        String s= "2 3 * 5 4 * + 901 -";
         System.out.println(evaluatePostfixExpression(s));
+
+        String s1= "-,+,*,2,3,*,5,4,901";
+        System.out.println(evaluatePrefixExpression(s1));
     }
 
     public static int evaluatePostfixExpression(String s){
@@ -62,5 +65,32 @@ public class App {
             return true;
         }
         return false;
+    }
+
+    public static int evaluatePrefixExpression(String s){
+        Stack<Integer> stack= new Stack<>();
+        for(int i=s.length()-1; i>=0; i--){
+            if(s.charAt(i)==' ' || s.charAt(i)==','){
+                continue;
+            }
+            if(isOperator(s.charAt(i))){
+                int operand1= stack.pop();
+                int operand2= stack.pop();
+                stack.push(performOperation(operand1, operand2, s.charAt(i)));
+            }
+            StringBuilder operand= new StringBuilder();
+            if(isNumeric(s.charAt(i))){
+                while(i<s.length() && isNumeric(s.charAt(i))) {
+                    operand.append(s.charAt(i));
+                    i--;
+                }
+                i++;
+                operand=operand.reverse();
+                stack.push(Integer.parseInt(operand.toString()));
+                operand= new StringBuilder();
+            }
+        }
+
+        return stack.pop();
     }
 }
