@@ -33,6 +33,7 @@ public class BinarySearchTree {
 
     public void bfs(){
         breadthFirstTraversal(root);
+        System.out.println();
     }
 
     private void breadthFirstTraversal(TreeNode root){
@@ -67,5 +68,19 @@ public class BinarySearchTree {
 
     public void countNodes(){
         System.out.println("Count: "+countNodes(root, 0));
+    }
+
+    public void inOrderTraversal(){
+        inOrderTraversal(root);
+        System.out.println();
+    }
+
+    private void inOrderTraversal(TreeNode root){
+        if(root== null){
+            return;
+        }
+        inOrderTraversal(root.left);
+        System.out.print(root.data+ " ");
+        inOrderTraversal(root.right);
     }
 }

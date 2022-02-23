@@ -16,5 +16,6 @@ public class App {
         tree.countNodes();
         System.out.println(tree.isEmpty());
         tree.bfs();
+        tree.inOrderTraversal();
     }
 }
