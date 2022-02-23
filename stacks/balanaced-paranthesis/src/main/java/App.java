@@ -3,7 +3,9 @@ import java.util.Stack;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println(isValid("(]"));
+        String s= "[(])";
+        System.out.println(isValid(s));
+        System.out.println(IsValidParenthesis(s));
 
     }
 
@@ -27,6 +29,46 @@ public class App {
         }
 
         return stack.isEmpty();
+
+    }
+
+    //This method will act only if brackets are of similar type.
+    public static boolean IsValidParenthesis(String s){
+
+        int curlyOpen=0;
+        int roundOpen=0;
+        int squareOpen= 0;
+        for(int i=0; i< s.length(); i++){
+            if(s.charAt(i)=='('){
+                roundOpen++;
+            }
+            else if(s.charAt(i)== '{'){
+                curlyOpen++;
+            }
+            else if(s.charAt(i)== '['){
+                squareOpen++;
+            }
+            else if(s.charAt(i)== ')'){
+                roundOpen--;
+                if(roundOpen<0){
+                    return false;
+                }
+            }
+            else if(s.charAt(i)== '}'){
+                curlyOpen--;
+                if(curlyOpen<0){
+                    return false;
+                }
+            }
+            else if(s.charAt(i)== ']'){
+                squareOpen--;
+                if(squareOpen<0){
+                    return false;
+                }
+            }
+        }
+
+        return (curlyOpen==0 && roundOpen==0 && squareOpen==0);
 
     }
 }
