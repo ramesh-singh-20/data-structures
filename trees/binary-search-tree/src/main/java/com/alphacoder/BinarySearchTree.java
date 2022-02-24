@@ -106,4 +106,16 @@ public class BinarySearchTree {
             return false;
         }
     }
+
+    public void height(){
+        System.out.println(height(root));
+    }
+
+    private int height(TreeNode root){
+        if(root== null){
+            return -1;
+        }
+        return 1+Math.max(height(root.right), height(root.left));
+
+    }
 }

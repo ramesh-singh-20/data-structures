@@ -18,5 +18,8 @@ public class App {
         tree.bfs();
         tree.inOrderTraversal();
         tree.search(19);
+        tree.insert(7);
+        tree.insert(1);
+        tree.height();
     }
 }
