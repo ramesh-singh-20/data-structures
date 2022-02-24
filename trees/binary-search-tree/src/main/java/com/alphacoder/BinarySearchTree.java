@@ -173,4 +173,21 @@ public class BinarySearchTree {
             return current.data;
         }
     }
+    public void isBST(){
+        System.out.println(isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+    }
+
+    private boolean isBST(TreeNode root, int min, int max){
+        if(root==null){
+            return true;
+        }
+        if(min<root.data && root.data<max){
+            return (isBST(root.left, min, root.data+1)&& isBST(root.right, root.data, max));
+        }else{
+            return false;
+        }
+
+    }
+
+    private boolean
 }

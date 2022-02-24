@@ -23,5 +23,6 @@ public class App {
         tree.height();
         tree.min();
         tree.max();
+        tree.isBST();
     }
 }
