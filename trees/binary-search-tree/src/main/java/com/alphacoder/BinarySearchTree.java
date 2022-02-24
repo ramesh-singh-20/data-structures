@@ -116,6 +116,61 @@ public class BinarySearchTree {
             return -1;
         }
         return 1+Math.max(height(root.right), height(root.left));
+    }
 
+    public void min(){
+        System.out.println("Minimum.");
+        System.out.println(min(root));
+        System.out.println(minRecursive(root));
+    }
+
+    public void max(){
+        System.out.println("Maximum.");
+        System.out.println(max(root));
+        System.out.println(maxRecursive(root));
+    }
+
+    private int min(TreeNode root){
+        if(root== null){
+            throw new RuntimeException("Tree is empty.");
+        }else{
+            TreeNode current= root;
+            while(current.left!= null){
+                current= current.left;
+            }
+            return current.data;
+        }
+    }
+
+    private int minRecursive(TreeNode root){
+        if(root== null){
+            throw new RuntimeException("Tree is empty.");
+        }
+        if(root.left== null){
+            return root.data;
+        }
+        return minRecursive(root.left);
+    }
+
+    private int maxRecursive(TreeNode root){
+        if(root== null){
+            throw new RuntimeException("Tree is empty.");
+        }
+        if(root.right== null){
+            return root.data;
+        }
+        return minRecursive(root.right);
+    }
+
+    private int max(TreeNode root){
+        if(root== null){
+            throw new RuntimeException("Tree is empty.");
+        }else{
+            TreeNode current= root;
+            while(current.right!= null){
+                current= current.right;
+            }
+            return current.data;
+        }
     }
 }

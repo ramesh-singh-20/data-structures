@@ -21,5 +21,7 @@ public class App {
         tree.insert(7);
         tree.insert(1);
         tree.height();
+        tree.min();
+        tree.max();
     }
 }
