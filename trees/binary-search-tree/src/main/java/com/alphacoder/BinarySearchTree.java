@@ -1,5 +1,7 @@
 package com.alphacoder;
 
+import com.sun.source.tree.Tree;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -189,5 +191,115 @@ public class BinarySearchTree {
 
     }
 
-    private boolean
+    public void delete(int data){
+        delete(root, data);
+    }
+
+    private TreeNode delete(TreeNode root, int data){
+        if(root== null){
+            return root;
+        }
+
+        if(data< root.data){
+            root.left=delete(root.left, data);
+        }
+        else if(data> root.data){
+            root.right=delete(root.right, data);
+        }
+        else if(data== root.data){
+            //Case1: No children
+            if(root.left==null && root.right== null){
+                root= null;
+            }
+
+            //Case2: 1 sub child
+            else if(root.right== null){
+                root= root.left;
+            }
+            else if(root.left== null){
+                root= root.right;
+            }
+
+            //Case 3: 2 sub child
+            else if(root.right!= null && root.left!= null){
+                int min= min(root.right);
+                root.data= min;
+                root.right=delete(root.right, min);
+            }
+
+        }
+
+        return root;
+    }
+
+    public void inOrderSuccessor(int data){
+
+        System.out.println("InOrderSuccessor: "+inOrderSuccessor(root, data).data);
+    }
+    
+    private  TreeNode inOrderSuccessor(TreeNode root, int data){
+        if(root== null){
+            return root;
+        }
+
+        TreeNode current= find(root, data);
+        if(current== null){
+            return null;
+        }
+        System.out.println("Current:" +current.data);
+        //Case1: right subtree
+        if(current.right!= null) {
+            return findMinNode(root.right);
+        }
+        //Case2: no right subtree
+        else if(current.right== null) {
+            TreeNode ancestor = root;
+            TreeNode successor= null;
+
+            while(current!= ancestor){
+                if(current.data< ancestor.data){
+                    successor= ancestor;
+                    ancestor= ancestor.left;
+
+                }else{
+                    ancestor= ancestor.right;
+                }
+            }
+            return successor;
+        }
+        return current;
+    }
+
+    private TreeNode findMinNode(TreeNode root){
+        if(root== null){
+            return root;
+        }
+
+        TreeNode current= root;
+        while(current.left!= null){
+            current= current.left;
+        }
+
+        return root;
+    }
+
+    private TreeNode find(TreeNode root, int data){
+        if(root== null){
+            return root;
+        }
+        TreeNode current= root;
+        if(data< current.data){
+            return find(root.left, data);
+        }
+        else if(data> current.data){
+            return findMinNode(root.right);
+        }
+        else{
+            return root;
+        }
+    }
+
+
+
+
 }

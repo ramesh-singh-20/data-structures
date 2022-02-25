@@ -24,5 +24,8 @@ public class App {
         tree.min();
         tree.max();
         tree.isBST();
+        //tree.delete(12);
+        tree.bfs();
+        tree.inOrderSuccessor(12);
     }
 }
