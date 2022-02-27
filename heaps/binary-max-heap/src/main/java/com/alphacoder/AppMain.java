@@ -1,5 +1,7 @@
 package com.alphacoder;
 
+import java.util.Arrays;
+
 public class AppMain {
     public static void main(String[] args) {
         MaxHeap heap= new MaxHeap();
@@ -24,5 +26,10 @@ public class AppMain {
         System.out.println("*************************************");
         System.out.println("Size: "+heap.getSize());
         System.out.println("Is Empty: "+heap.isEmpty());
+
+        System.out.println(Arrays.toString(heap.heapSort(new int[]{59, 2, 6, 9, 3, 59, 23, 54})));
+
+
+
     }
 }

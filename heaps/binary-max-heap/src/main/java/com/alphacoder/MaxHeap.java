@@ -95,4 +95,80 @@ public class MaxHeap {
         }
         return leftIndex;
     }
+
+    public int [] heapSort(int [] arr){
+        if(arr.length<2){
+            return arr;
+        }
+        arr= heapify(arr);
+        int n= arr.length;
+
+        while(n>0) {
+            int temp= arr[n-1];
+            arr[n - 1] = arr[0];
+            arr[0]= temp;
+
+            pushDown(arr, 0, n - 1);
+            n--;
+        }
+
+
+        return arr;
+
+    }
+
+    private int[] heapify(int [] arr){
+        int n= arr.length;
+        for(int i= n/2-1; i>=0; i--){
+            int left= 2*i+1;
+            int right= 2*i+2;
+
+            if(right>=n || arr[left]>= arr[right]){
+                if(arr[i]<arr[left]){
+                    int temp= arr[left];
+                    arr[left]= arr[i];
+                    arr[i]= temp;
+                }
+            }else{
+                if(arr[i]< arr[right]){
+                    int temp= arr[right];
+                    arr[right]= arr[i];
+                    arr[i]= temp;
+                }
+            }
+        }
+
+
+        return arr;
+    }
+
+    private int [] pushDown(int arr[], int index,int size){
+            int n= size;
+            int left=2*index+1;
+            int right= 2*index+2;
+            if(left>=n){
+                return arr;
+            }
+            if(right>=n || arr[left]> arr[right]){
+                if(arr[index]< arr[left]){
+                    int temp= arr[left];
+                    arr[left]= arr[index];
+                    arr[index]= temp;
+                    arr= pushDown(arr, left, size);
+                }
+            }else{
+                if(arr[index]<arr[right]){
+                    int temp= arr[right];
+                    arr[right]= arr[index];
+                    arr[index]= temp;
+                    arr= pushDown(arr, right, size);
+                }
+            }
+        return arr;
+    }
+
+
+
+
+
 }
