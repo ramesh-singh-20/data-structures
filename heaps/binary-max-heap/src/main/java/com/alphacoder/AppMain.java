@@ -9,5 +9,6 @@ public class AppMain {
 
         System.out.println("Max element: "+heap.getMax());
         System.out.println("Size: "+heap.getSize());
+        System.out.println("Is Empty: "+heap.isEmpty());
     }
 }
