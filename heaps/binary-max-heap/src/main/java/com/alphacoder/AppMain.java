@@ -10,5 +10,19 @@ public class AppMain {
         System.out.println("Max element: "+heap.getMax());
         System.out.println("Size: "+heap.getSize());
         System.out.println("Is Empty: "+heap.isEmpty());
+        System.out.println("Extract Max: "+ heap.extractMax());
+        System.out.println("*************************************");
+        System.out.println("Max element: "+heap.getMax());
+        System.out.println("Size: "+heap.getSize());
+        System.out.println("Is Empty: "+heap.isEmpty());
+        System.out.println("Extract Max: "+ heap.extractMax());
+        System.out.println("*************************************");
+        System.out.println("Max element: "+heap.getMax());
+        System.out.println("Size: "+heap.getSize());
+        System.out.println("Is Empty: "+heap.isEmpty());
+        System.out.println("Extract Max: "+ heap.extractMax());
+        System.out.println("*************************************");
+        System.out.println("Size: "+heap.getSize());
+        System.out.println("Is Empty: "+heap.isEmpty());
     }
 }

@@ -48,4 +48,51 @@ public class MaxHeap {
     public boolean isEmpty(){
         return size==0;
     }
+
+    public int extractMax(){
+        if(size==0){
+            throw new RuntimeException("Heap is empty.");
+        }
+        int data= arr.get(1);
+
+        arr.set(1, arr.get(size));
+        size--;
+        shiftDown(1);
+
+        return data;
+    }
+
+    private void shiftDown(int index){
+        if(index>=size){
+            return;
+        }
+
+        int maxChildIndex= maxChildIndex(index);
+        if(arr.get(index)< arr.get(maxChildIndex)) {
+            int temp = arr.get(maxChildIndex);
+            arr.set(maxChildIndex, arr.get(index));
+            arr.set(index, temp);
+            shiftDown(maxChildIndex);
+        }
+
+    }
+
+    public int maxChildIndex(int index){
+
+        int leftIndex= 2*index;
+        int rightIndex= (2*index)+1;
+
+        if(rightIndex>size){
+            return leftIndex;
+        }
+
+        if(arr.get(leftIndex)>= arr.get(rightIndex)){
+            return leftIndex;
+        }
+
+        if(arr.get(leftIndex)< arr.get(rightIndex)){
+            return rightIndex;
+        }
+        return leftIndex;
+    }
 }
