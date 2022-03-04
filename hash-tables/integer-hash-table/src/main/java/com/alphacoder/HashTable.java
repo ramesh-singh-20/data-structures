@@ -14,8 +14,8 @@ public class HashTable {
         this.maxSize= 8;
         entryArr= new Entry[maxSize];
         this.prime= nextPrime(maxSize);
-        int a = ThreadLocalRandom.current().nextInt(1, prime + 1);
-        int b= ThreadLocalRandom.current().nextInt(1, prime+1);
+        a = ThreadLocalRandom.current().nextInt(1, prime + 1);
+        b= ThreadLocalRandom.current().nextInt(1, prime+1);
     }
 
     private int hash(int key){
@@ -56,7 +56,44 @@ public class HashTable {
             b= ThreadLocalRandom.current().nextInt(1, prime+1);
             Entry [] tempArr= new Entry[maxSize];
 
+            for(int i=0; i<entryArr.length; i++){
+                if(entryArr[i]!= null && !entryArr[i].isDeleted){
+                    int temp= hash(entryArr[i].key);
+                     int j= temp;
+
+                     do {
+                         if(tempArr[j]==null){
+                             tempArr[j]= entryArr[i];
+                         }
+                         j=j+1;
+
+                    }while(temp!= j);
+                }
+            }
+            entryArr= tempArr;
+            tempArr= null;
+
         }
+    }
+
+    public boolean exists(int key){
+        int i= hash(key);
+        int temp= i;
+
+        do{
+            if(entryArr[i]== null){
+                return false;
+            }
+            if(entryArr[i]!= null){
+                return true;
+            }
+
+            if(entryArr[i].isDeleted){
+                i=i+1;
+            }
+        }while(i!= temp);
+
+        return false;
     }
 
 
@@ -96,5 +133,14 @@ public class HashTable {
         }
 
         return true;
+    }
+
+    public void print(){
+        for(int i=0; i<maxSize; i++){
+            if(entryArr[i]!= null && !entryArr[i].isDeleted){
+                System.out.print(entryArr[i]+ " ");
+            }
+        }
+        System.out.println();
     }
 }

@@ -19,4 +19,11 @@ public class Entry {
     public int hashCode() {
         return Objects.hash(value);
     }
+
+    @Override
+    public String toString() {
+        return "Entry{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 }
