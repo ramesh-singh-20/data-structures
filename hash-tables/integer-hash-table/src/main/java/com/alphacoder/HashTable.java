@@ -31,6 +31,7 @@ public class HashTable {
             if (entryArr[i] == null) {
                 Entry entry = new Entry();
                 entry.value = value;
+                entry.key= key;
                 entryArr[i] = entry;
                 currentSize++;
                 reSize();
@@ -38,13 +39,14 @@ public class HashTable {
             } else if (entryArr[i].isDeleted) {
                 entryArr[i].value = value;
                 entryArr[i].isDeleted = false;
+                entryArr[i].key= key;
                 currentSize++;
                 reSize();
                 return;
-            } else if (entryArr[i].value.equals(value)) {
+            } else if (entryArr[i].key==(key)) {
                 entryArr[i].value = value;
                 return;
-            } else if (!entryArr[i].value.equals(value)) {
+            } else if (entryArr[i].key !=(key)) {
                 i = (i + 1) % maxSize;
             }
         }while(i!= temp);
@@ -88,6 +90,7 @@ public class HashTable {
                 return false;
             }
             if(entryArr[i]!= null){
+
                 return true;
             }
 
@@ -97,6 +100,21 @@ public class HashTable {
         }while(i!= temp);
 
         return false;
+    }
+
+    public String get(int key){
+        int i= hash(key);
+        int temp =i;
+
+        do{
+            if(entryArr[i]!= null && !entryArr[i].isDeleted){
+
+            }
+
+        }while(i!= temp);
+
+        return null;
+
     }
 
 
