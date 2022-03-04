@@ -13,5 +13,11 @@ public class AppMain {
        System.out.println(table.exists(2));
        System.out.println(table.exists(3));
        table.print();
+       table.insert(5, "Sachit");
+       table.insert(7, "Atharva");
+       table.print();
+       System.out.println(table.exists(2));
+       System.out.println(table.exists(3));
+       System.out.println(table.getMaxSize());
     }
 }

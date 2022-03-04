@@ -33,11 +33,13 @@ public class HashTable {
                 entry.value = value;
                 entryArr[i] = entry;
                 currentSize++;
+                reSize();
                 return;
             } else if (entryArr[i].isDeleted) {
                 entryArr[i].value = value;
                 entryArr[i].isDeleted = false;
                 currentSize++;
+                reSize();
                 return;
             } else if (entryArr[i].value.equals(value)) {
                 entryArr[i].value = value;
@@ -64,8 +66,9 @@ public class HashTable {
                      do {
                          if(tempArr[j]==null){
                              tempArr[j]= entryArr[i];
+                             break;
                          }
-                         j=j+1;
+                         j=(j+1)%maxSize;
 
                     }while(temp!= j);
                 }
@@ -142,5 +145,9 @@ public class HashTable {
             }
         }
         System.out.println();
+    }
+
+    public int getMaxSize(){
+        return maxSize;
     }
 }
