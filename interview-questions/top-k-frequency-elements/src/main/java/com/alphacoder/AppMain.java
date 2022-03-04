@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 
 public class AppMain {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(maxFrequentElements(new int[] {1, 2, 3, 1, 2, 5, 5, 3, 3}, 2)));
+        System.out.println(Arrays.toString(maxFrequentElements(new int[] {1, 2, 3, 1, 2, 5, 5, 3, 3}, 4)));
 
     }
 
