@@ -18,7 +18,11 @@ public class AppMain {
        table.print();
        System.out.println(table.exists(2));
        System.out.println(table.exists(3));
-        System.out.println(table.exists(9));
+       System.out.println(table.exists(9));
        System.out.println(table.getMaxSize());
+       System.out.println(table.get(2));
+       table.remove(1);
+       System.out.println(table.get(1));
+       table.print();
     }
 }

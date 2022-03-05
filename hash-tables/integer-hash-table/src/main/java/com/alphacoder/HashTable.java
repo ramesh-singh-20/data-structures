@@ -89,8 +89,7 @@ public class HashTable {
             if(entryArr[i]== null){
                 return false;
             }
-            if(entryArr[i]!= null){
-
+            if(entryArr[i]!= null && entryArr[i].key== key){
                 return true;
             }
 
@@ -107,14 +106,32 @@ public class HashTable {
         int temp =i;
 
         do{
-            if(entryArr[i]!= null && !entryArr[i].isDeleted){
-
+            if(entryArr[i]!= null && !entryArr[i].isDeleted
+            && entryArr[i].key== key){
+                return entryArr[i].value;
             }
+            i=(i+1)%maxSize;
 
         }while(i!= temp);
 
         return null;
 
+    }
+
+    public void remove(int key){
+        int i= hash(key);
+        int temp =i;
+
+        do{
+            if(entryArr[i]!= null && !entryArr[i].isDeleted
+                    && entryArr[i].key== key){
+                entryArr[i].isDeleted= true;
+                entryArr[i].value= null;
+                return;
+            }
+            i=(i+1)%maxSize;
+
+        }while(i!= temp);
     }
 
 
