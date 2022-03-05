@@ -8,7 +8,7 @@ public class AppMain {
         System.out.println(search.binarySearchIterative(new int[] {}, -19));
 
 
-        System.out.println(search.binarySearchRecursive(new int[] {2, 6, 8, 19, 34, 56, 76}, -19, 0, ));
-        System.out.println(search.binarySearchIterative(new int[] {}, -19));
+        System.out.println(search.binarySearchRecursive(new int[] {2, 6, 8, 19, 34, 56, 76}, 34, 0, 6));
+        System.out.println(search.binarySearchRecursive(new int[] {-19}, -19, 0, 0));
     }
 }
