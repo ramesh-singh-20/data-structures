@@ -9,5 +9,7 @@ public class AppMain {
         System.out.println(bitManipulation.clearBit(6, 2));
 
         System.out.println(bitManipulation.flipBit(6, 0));
+
+        System.out.println(bitManipulation.isBitSet(6, 3));
     }
 }

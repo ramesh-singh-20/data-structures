@@ -25,4 +25,9 @@ public class BitManipulation {
 
         return number;
     }
+
+    public boolean isBitSet(int number, int position){
+        int shifted= number >> position;
+        return (shifted & 1)==1;
+    }
 }
