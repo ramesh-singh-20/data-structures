@@ -30,4 +30,20 @@ public class BitManipulation {
         int shifted= number >> position;
         return (shifted & 1)==1;
     }
+
+    public int modifyBit(int number, int position, int state){
+        int mask= 1;
+        mask= mask << position;
+
+        return (number & ~mask) | (-state & mask);
+    }
+
+    public boolean isEven(int number){
+        int mask=1;
+        return ((number & mask)==0);
+    }
+
+    public boolean isPowerTwo(int number){
+        return ((number & number-1)==0);
+    }
 }
