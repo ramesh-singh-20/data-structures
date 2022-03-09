@@ -20,9 +20,11 @@ public class AppMain {
 
         System.out.println(bitManipulation.isEven(32));
 
-        System.out.println(bitManipulation.isPowerTwo(34));
+        System.out.println(bitManipulation.isPowerTwo(32));
 
         System.out.println(bitManipulation.isPowerTwo(78));
+
+        System.out.println(bitManipulation.countDifferentBits(10, 20));
 
     }
 }

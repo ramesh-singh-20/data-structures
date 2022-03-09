@@ -46,4 +46,14 @@ public class BitManipulation {
     public boolean isPowerTwo(int number){
         return ((number & number-1)==0);
     }
+
+    public int countDifferentBits(int num1, int num2){
+        int xor= num1 ^ num2;
+        int count=0;
+        while(xor>0){
+            xor= xor & (xor-1);
+            count++;
+        }
+        return count;
+    }
 }
