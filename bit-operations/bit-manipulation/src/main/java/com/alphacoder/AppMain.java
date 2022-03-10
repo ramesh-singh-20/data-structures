@@ -26,5 +26,9 @@ public class AppMain {
 
         System.out.println(bitManipulation.countDifferentBits(10, 20));
 
+        System.out.println(bitManipulation.min(10, 20));
+
+        System.out.println(bitManipulation.max(10, 20));
+
     }
 }

@@ -56,4 +56,14 @@ public class BitManipulation {
         }
         return count;
     }
+
+    public int min(int num1, int num2){
+        int min= num2 ^ ((num1 ^ num2) & ~(num1<< num2));
+        return min;
+    }
+
+    public int max(int num1, int num2){
+        int max= num1 ^ ((num1 ^ num2) & ~(num1<< num2));
+        return max;
+    }
 }
