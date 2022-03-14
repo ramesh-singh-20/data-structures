@@ -6,6 +6,6 @@ public class AppMain {
     public static void main(String[] args) {
         BubbleSort sort= new BubbleSort();
 
-        System.out.println(Arrays.toString(sort.bubbleSort(new int[]{1, -1})));
+        System.out.println(Arrays.toString(sort.bubbleSort(new int[]{2, 1})));
     }
 }
